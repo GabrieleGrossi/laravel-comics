@@ -1,30 +1,250 @@
 @use './partials/variables' as *;
 @use './partials/mixins.scss' as *;
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap');
+body {
+    background-color: #212121;
+    font-family: 'Sofia Sans Condensed', sans-serif;
+}
 
-*{
+ul {
+    list-style-type: none;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-body{
-    font-family: 'Raleway', sans-serif;
+.colorBlack {
+    color: $colorFontBlack;
 }
 
-ul{
-    list-style-type: none;
+ul li.active {
+    border-bottom: 3px solid $colorFontBlue;
+
+    a {
+
+        color: $colorFontBlue !important;
+    }
 }
 
-ul li a{
-    text-decoration: none;
-    color: $secondaryFontColor;
+.non-active {
+    margin-bottom: 3px;
 }
 
-.flex{
-    display: flex;
+header {
+
+    div.upper {
+        background-color: $colorFontBlue;
+        font-size: .88rem;
+        padding: .47rem 0;
+    }
+
+    div.lower {
+        background-color: $colorFontWhite;
+        padding: 1rem 0;
+
+        img {
+            width: 80px;
+            height: 80px;
+        }
+
+        ul li {
+            margin-left: 2.5rem;
+
+            a {
+                color: $colorFontBlack;
+                text-decoration: none;
+                font-size: 20px;
+                text-transform: uppercase;
+                font-weight: 500;
+            }
+        }
+    }
+
+    div.logo {
+        margin-left: 1rem;
+    }
+
+    div.searchbar {
+        input {
+            border: none;
+            border-bottom: 2px solid $colorFontBlue;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        div.icon {
+            position: absolute;
+            right: 0;
+        }
+    }
 }
 
-.m-auto{
-    margin: auto;
+main {
+    div.jumbo {
+        position: relative;
+
+        img {
+            height: 450px;
+            width: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        div.series {
+            background-color: $colorFontBlue;
+            padding: .55rem 1.44rem;
+            position: absolute;
+
+            left: 17%;
+            bottom: -15px;
+
+            p {
+                text-transform: uppercase;
+                color: $colorFontWhite;
+                font-weight: bold;
+                font-size: 1.5rem;
+                margin: 0;
+            }
+        }
+    }
+
+    div.content-black {
+        background-color: #1c1c1c;
+        color: $colorFontWhite;
+        padding: 2.5rem 0;
+        padding-bottom: 1rem;
+
+        div.load-more {
+            width: 170px;
+            text-align: center;
+            margin: 0 auto;
+            background-color: $colorFontBlue;
+            padding: .55rem 1.44rem;
+            transition: all 1s ease;
+            cursor: pointer;
+        }
+
+        div.load-more:hover {
+            background-color: rgba($colorFontBlue , 0.7);
+        }
+
+        div.card-cs {
+            width: calc(100% / 6 - 25px);
+            margin-right: 25px;
+            margin-bottom: 1rem;
+
+
+            img {
+                width: 100%;
+                height: 175px;
+                margin-bottom: .88rem;
+                transition: all 1s ease;
+                cursor: pointer;
+            }
+
+            img:hover {
+                transform: scale(1.5);
+            }
+        }
+    }
+
+    div.content-blue {
+        background-color: $colorFontBlue;
+        padding: 3rem 0;
+
+        li {
+
+            img {
+                width: 55px;
+                height: 55px;
+                object-fit: contain;
+            }
+
+            p {
+                color: $colorFontWhite;
+                margin-left: 1rem;
+            }
+
+        }
+    }
+}
+
+footer {
+    div.footer-upper {
+        position: relative;
+        background-image: url(../img/footer-bg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 2rem 0;
+        overflow: hidden;
+
+
+        ul {
+            margin-right: 2rem;
+
+            li {
+                color: gray;
+                line-height: 30px;
+                font-size: .88rem;
+
+                h1 {
+                    color: $colorFontWhite;
+                    margin-bottom: 1rem;
+                    font-size: 1.3rem;
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        div.comics-shop ul:nth-child(1) {
+            margin-bottom: 2rem;
+        }
+
+        img {
+            width: 620px;
+            position: absolute;
+            top: -70px;
+            left: 55%;
+        }
+    }
+
+    div.footer-lower {
+        background-color: #303030;
+        padding: 2rem 0;
+
+        div.signUp {
+            border: 1px solid $colorFontBlue;
+            padding: .88rem 1rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: all 1s ease;
+            cursor: pointer;
+
+            p {
+                color: $colorFontWhite;
+            }
+
+        }
+
+        div.signUp:hover {
+            background-color: $colorFontBlue;
+        }
+
+        div.social-icons {
+            h1 {
+                color: $colorFontBlue;
+                text-transform: uppercase;
+                font-size: 1.3rem;
+                margin-right: 1rem;
+                margin-bottom: 0;
+            }
+
+            ul li {
+                margin-right: 1rem;
+            }
+        }
+
+    }
+
 }
